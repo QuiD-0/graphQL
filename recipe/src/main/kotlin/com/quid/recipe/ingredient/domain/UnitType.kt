@@ -1,4 +1,4 @@
-package com.quid.recipe.stock.domain
+package com.quid.recipe.ingredient.domain
 
 enum class UnitType(val unit: String) {
 

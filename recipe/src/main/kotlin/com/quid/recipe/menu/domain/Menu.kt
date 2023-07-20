@@ -1,6 +1,6 @@
 package com.quid.recipe.menu.domain
 
-import com.quid.recipe.stock.domain.Ingredient
+import com.quid.recipe.ingredient.domain.Ingredient
 import org.bson.types.ObjectId
 
 class Menu(

@@ -1,9 +1,9 @@
-package com.quid.recipe.stock.domain
+package com.quid.recipe.ingredient.domain
 
 import org.bson.types.ObjectId
 import java.time.LocalDateTime
 
-class Ingredient(
+data class Ingredient(
     val id: String = ObjectId.get().toHexString(),
     val name:String,
     val code:String,
