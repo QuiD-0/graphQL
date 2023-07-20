@@ -1,6 +1,6 @@
-package com.quid.recipe.ingredient.repository.mongo
+package com.quid.recipe.ingredient.gateway.repository.mongo
 
-import com.quid.recipe.ingredient.repository.document.IngredientEntity
+import com.quid.recipe.ingredient.gateway.repository.document.IngredientEntity
 import org.bson.types.ObjectId
 import org.springframework.data.repository.CrudRepository
 

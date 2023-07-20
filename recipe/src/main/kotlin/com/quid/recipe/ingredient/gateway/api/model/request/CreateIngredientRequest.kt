@@ -1,4 +1,4 @@
-package com.quid.recipe.ingredient.model.request
+package com.quid.recipe.ingredient.gateway.api.model.request
 
 import com.quid.recipe.ingredient.domain.Ingredient
 import com.quid.recipe.ingredient.domain.UnitType

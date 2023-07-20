@@ -1,0 +1,12 @@
+type Ingredient{
+    id: String
+    name: String
+    code: String
+    quantity: Int
+    unit: String
+    savePoint: String
+}
+
+type Query {
+    getIngredients: [Ingredient]
+}

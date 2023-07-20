@@ -1,7 +1,7 @@
 package com.quid.recipe.ingredient.usecase
 
 import com.quid.recipe.ingredient.domain.Ingredient
-import com.quid.recipe.ingredient.repository.IngredientRepository
+import com.quid.recipe.ingredient.gateway.repository.IngredientRepository
 import org.springframework.stereotype.Service
 
 interface FindIngredient {

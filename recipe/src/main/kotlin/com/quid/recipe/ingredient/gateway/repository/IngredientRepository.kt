@@ -1,8 +1,8 @@
-package com.quid.recipe.ingredient.repository
+package com.quid.recipe.ingredient.gateway.repository
 
 import com.quid.recipe.ingredient.domain.Ingredient
-import com.quid.recipe.ingredient.repository.document.toDocument
-import com.quid.recipe.ingredient.repository.mongo.MongoIngredientRepository
+import com.quid.recipe.ingredient.gateway.repository.document.toDocument
+import com.quid.recipe.ingredient.gateway.repository.mongo.MongoIngredientRepository
 import org.springframework.stereotype.Repository
 
 interface IngredientRepository {
