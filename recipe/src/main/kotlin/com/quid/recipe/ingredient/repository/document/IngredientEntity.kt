@@ -3,13 +3,17 @@ package com.quid.recipe.ingredient.repository.document
 import com.quid.recipe.ingredient.domain.Ingredient
 import com.quid.recipe.ingredient.domain.UnitType
 import org.bson.types.ObjectId
+import org.springframework.data.annotation.Id
+import org.springframework.data.mongodb.core.index.Indexed
 import org.springframework.data.mongodb.core.mapping.Document
 import java.time.LocalDateTime
 
 @Document("ingredient")
 class IngredientEntity(
+    @Id
     val id: ObjectId,
     val name: String,
+    @Indexed(unique = true)
     val code: String,
     val quantity: Int,
     val unit: UnitType,

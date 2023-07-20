@@ -1,1 +1,11 @@
-
+spring:
+  graphql:
+    graphiql:
+      enabled: true
+    schema:
+      printer:
+        enabled: true
+  data:
+    mongodb:
+      uri: mongodb://root:rootUser@130.162.136.116:27017/recipe?authSource=admin
+      auto-index-creation: true
