@@ -11,4 +11,8 @@ data class Ingredient(
     val unit: UnitType,
     val savePoint: String,
     val lastModifiedDate: LocalDateTime = LocalDateTime.now()
-)
+){
+    init {
+        require(quantity > 0) { "Quantity must be greater than 0" }
+    }
+}
