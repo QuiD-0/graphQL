@@ -18,6 +18,9 @@ class IngredientController(
     @QueryMapping
     fun getIngredients(): List<Ingredient> = findIngredient.all()
 
+    @QueryMapping
+    fun findByCode(@Argument code: String): Ingredient = findIngredient.byCode(code)
+
     @MutationMapping
     fun createIngredient(@Argument request: CreateIngredientRequest): Ingredient = createIngredient.execute(request)
 }

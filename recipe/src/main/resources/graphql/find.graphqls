@@ -9,14 +9,21 @@ type Ingredient{
 }
 type Query {
     getIngredients: [Ingredient]
+    findByCode(code: String): Ingredient
 }
-# query {
-#   getIngredients{
-#     id
-#     name
-#     code
-#     quantity
-#     savePoint
-# 		lastModifiedDate
-#   }
-# }
+
+#query {
+#	getIngredients{
+#    id
+#    name
+#    code
+#    quantity
+#    savePoint
+#		lastModifiedDate
+#  }
+#  findByCode(code:"FA001"){
+#    name
+#    code
+#    quantity
+#  }
+#}
