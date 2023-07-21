@@ -1,0 +1,22 @@
+type Ingredient{
+    id: String
+    name: String
+    code: String
+    quantity: Int
+    unit: String
+    savePoint: String
+    lastModifiedDate: String
+}
+type Query {
+    getIngredients: [Ingredient]
+}
+# query {
+#   getIngredients{
+#     id
+#     name
+#     code
+#     quantity
+#     savePoint
+# 		lastModifiedDate
+#   }
+# }
