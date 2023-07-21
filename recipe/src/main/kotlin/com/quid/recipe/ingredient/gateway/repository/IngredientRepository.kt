@@ -10,6 +10,7 @@ interface IngredientRepository {
     fun findAll(): List<Ingredient>
     fun findByCode(code: String): Ingredient
     fun existsByCode(code: String): Boolean
+    fun findByCodes(ingredients: List<String>): List<Ingredient>
 
     @Repository
     class IngredientRepositoryImpl(
@@ -30,5 +31,9 @@ interface IngredientRepository {
             mongoRepository.findByCode(code)
                 ?.let { it.quantity > 0 }
                 ?: false
+
+        override fun findByCodes(ingredients: List<String>): List<Ingredient> {
+            return mongoRepository.findByCodeIn(ingredients).map { it.toIngredient() }
+        }
     }
 }
