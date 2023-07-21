@@ -7,6 +7,14 @@ type Ingredient{
     savePoint: String
     lastModifiedDate: String
 }
+
+type Menu{
+    id: String,
+    name: String,
+    ingredients: [String],
+    price: Int
+}
+
 type Query {
     getIngredients: [Ingredient]
     findByCode(code: String): Ingredient

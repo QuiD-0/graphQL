@@ -9,7 +9,7 @@ import org.springframework.data.mongodb.core.mapping.Document
 import java.time.LocalDateTime
 
 @Document("ingredient")
-class IngredientEntity(
+class IngredientDocument(
     @Id
     val id: ObjectId,
     val name: String,
@@ -31,7 +31,7 @@ class IngredientEntity(
     )
 }
 
-fun toDocument(ingredient: Ingredient) = IngredientEntity(
+fun toIngredientDocument(ingredient: Ingredient) = IngredientDocument(
     id = ObjectId(ingredient.id),
     name = ingredient.name,
     code = ingredient.code,

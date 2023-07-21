@@ -1,7 +1,7 @@
 package com.quid.recipe.ingredient.gateway.repository
 
 import com.quid.recipe.ingredient.domain.Ingredient
-import com.quid.recipe.ingredient.gateway.repository.document.toDocument
+import com.quid.recipe.ingredient.gateway.repository.document.toIngredientDocument
 import com.quid.recipe.ingredient.gateway.repository.mongo.MongoIngredientRepository
 import org.springframework.stereotype.Repository
 
@@ -18,7 +18,7 @@ interface IngredientRepository {
     ) : IngredientRepository {
 
         override fun save(ingredient: Ingredient): Ingredient =
-            toDocument(ingredient).let { mongoRepository.save(it) }.toIngredient()
+            toIngredientDocument(ingredient).let { mongoRepository.save(it) }.toIngredient()
 
         override fun findAll(): List<Ingredient> =
             mongoRepository.findAll().map { it.toIngredient() }

@@ -13,6 +13,6 @@ interface CreateMenu {
         private val menuRepository: MenuRepository,
     ) : CreateMenu {
         override fun execute(request: CreateMenuRequest): Menu =
-            menuRepository.save(request.toMenu())
+            menuRepository.save(request)
     }
 }

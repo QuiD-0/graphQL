@@ -1,6 +1,6 @@
-
 type Mutation {
     createIngredient(request : CreateIngredientRequest): Ingredient
+    createMenu(request : CreateMenuRequest): Menu
 }
 
 input CreateIngredientRequest {
@@ -9,6 +9,12 @@ input CreateIngredientRequest {
     quantity: Int
     unit: String
     savePoint: String
+}
+
+input CreateMenuRequest {
+    name: String
+    ingredientCodes: [String]
+    price: Int
 }
 #mutation {
 #  createIngredient(request: {
