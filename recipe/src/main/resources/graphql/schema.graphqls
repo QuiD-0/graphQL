@@ -5,8 +5,21 @@ type Ingredient{
     quantity: Int
     unit: String
     savePoint: String
+    lastModifiedDate: String
 }
-
 type Query {
     getIngredients: [Ingredient]
 }
+
+type Mutation {
+    createIngredient(request : CreateIngredientRequest): Ingredient
+}
+
+input CreateIngredientRequest {
+    name: String
+    code: String
+    quantity: Int
+    unit: String
+    savePoint: String
+}
+

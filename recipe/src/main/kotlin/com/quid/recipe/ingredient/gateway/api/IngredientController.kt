@@ -1,11 +1,23 @@
 package com.quid.recipe.ingredient.gateway.api
 
+import com.quid.recipe.ingredient.domain.Ingredient
+import com.quid.recipe.ingredient.gateway.api.model.request.CreateIngredientRequest
+import com.quid.recipe.ingredient.usecase.CreateIngredient
+import com.quid.recipe.ingredient.usecase.FindIngredient
+import org.springframework.graphql.data.method.annotation.Argument
+import org.springframework.graphql.data.method.annotation.MutationMapping
 import org.springframework.graphql.data.method.annotation.QueryMapping
 import org.springframework.stereotype.Controller
 
 @Controller
-class IngredientController {
+class IngredientController(
+    private val findIngredient: FindIngredient,
+    private val createIngredient: CreateIngredient,
+) {
 
     @QueryMapping
-    fun helloWorld(): String = "Hello World"
+    fun getIngredients(): List<Ingredient> = findIngredient.all()
+
+    @MutationMapping
+    fun createIngredient(@Argument request: CreateIngredientRequest): Ingredient = createIngredient.execute(request)
 }
