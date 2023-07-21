@@ -9,6 +9,7 @@ import org.springframework.stereotype.Repository
 
 interface MenuRepository {
     fun save(request: CreateMenuRequest): Menu
+    fun findAll(): List<Menu>
 
     @Repository
     class MenuRepositoryImpl(
@@ -18,5 +19,7 @@ interface MenuRepository {
         override fun save(request: CreateMenuRequest): Menu = ingredientRepository.findByCodes(request.ingredientCodes)
             .let { mongoMenuRepository.save(createMenuDocument(request, it)) }
             .toMenu()
+
+        override fun findAll(): List<Menu> = mongoMenuRepository.findAll().map { it.toMenu() }
     }
 }

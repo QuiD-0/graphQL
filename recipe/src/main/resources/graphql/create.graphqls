@@ -16,18 +16,3 @@ input CreateMenuRequest {
     ingredientCodes: [String]
     price: Int
 }
-#mutation {
-#  createIngredient(request: {
-#    name: "IPhone"
-#    code: "FA002"
-#    quantity: 10
-#    unit: "PACKAGE"
-#    savePoint: "Garage"
-#  }) {
-#    name
-#    code
-#    quantity
-#    unit
-#    savePoint
-#  }
-#}

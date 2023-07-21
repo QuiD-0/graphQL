@@ -9,13 +9,14 @@ import org.bson.types.ObjectId
 import org.springframework.data.annotation.Id
 import org.springframework.data.mongodb.core.mapping.DBRef
 import org.springframework.data.mongodb.core.mapping.Document
+import org.springframework.data.mongodb.core.mapping.DocumentReference
 
 @Document(collection = "menu")
 class MenuDocument(
     @Id
     val id: ObjectId,
     val name: String,
-    @DBRef
+    @DocumentReference
     val ingredients: List<IngredientDocument>,
     val price: Int
 ) {
