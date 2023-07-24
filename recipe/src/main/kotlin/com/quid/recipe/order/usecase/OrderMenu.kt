@@ -5,6 +5,7 @@ import com.quid.recipe.menu.usecase.DecreaseMenuQuantity
 import com.quid.recipe.menu.usecase.MakeFood
 import com.quid.recipe.order.domain.Order
 import com.quid.recipe.order.domain.createOrder
+import com.quid.recipe.order.gateway.repository.OrderRepository
 import org.springframework.stereotype.Service
 
 interface OrderMenu {
