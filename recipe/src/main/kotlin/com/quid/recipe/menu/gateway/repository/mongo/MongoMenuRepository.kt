@@ -5,4 +5,6 @@ import org.bson.types.ObjectId
 import org.springframework.data.repository.CrudRepository
 
 interface MongoMenuRepository: CrudRepository<MenuDocument, ObjectId> {
+    fun findByName(name: String): MenuDocument
+    fun existsByNameContaining(keys: Set<String>): Boolean
 }

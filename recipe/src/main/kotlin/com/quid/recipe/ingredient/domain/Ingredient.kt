@@ -13,6 +13,6 @@ data class Ingredient(
     val lastModifiedDate: LocalDateTime = LocalDateTime.now()
 ){
     init {
-        require(quantity > 0) { "Quantity must be greater than 0" }
+        require(quantity >= 0) { "quantity is must not null" }
     }
 }
